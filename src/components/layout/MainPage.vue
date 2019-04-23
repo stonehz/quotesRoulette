@@ -3,19 +3,22 @@
     <h1>{{ msg }}</h1>
     <button v-on:click="randomQuote()"> Touch me if you want to get inspired! </button>
     <hr>
-    <h2> {{ quotes[rand] }} </h2>
+    <h2 v-if="rand >= 0"> {{ list[rand].quote }} </h2>
+    <h4 v-if="rand >= 0" > by {{ list[rand].author }} </h4>
     <hr>
   </div>
 </template>
 
 <script>
-const randomize = () => Math.floor(Math.random() * 10);
+import { quoteList as quotes } from '../../data/quotes';
+
+const randomize = size => Math.floor(Math.random() * size);
 
 export default {
   name: 'MainPage',
   data() {
     return {
-      quotes: ['1', '2', '3', '4', '5', '6', '7', '8', '9'],
+      list: quotes,
       rand: -1,
     };
   },
@@ -24,8 +27,8 @@ export default {
   },
   methods: {
     randomQuote() {
-      console.log('test');
-      this.rand = randomize();
+      this.rand = randomize(quotes.length);
+      console.log(this.rand);
     },
   },
 };
