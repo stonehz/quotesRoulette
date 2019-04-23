@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>BAGGAGE-FREE</title>
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css"
+  />
+  <link
+    type="text/css"
+    rel="stylesheet"
+    href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.css"
+  />
+
+  <!-- Required scripts -->
+  <script src="https://unpkg.com/vue"></script>
+  <script src="https://unpkg.com/babel-polyfill@latest/dist/polyfill.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.js"></script>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but quotes-roulette doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <!-- Our application root element -->
+    <div id="app">
+      <b-navbar toggleable="lg" type="dark" variant="info">
+          <b-navbar-brand href="#">TeSt#2</b-navbar-brand>
+      
+          <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      
+          <b-collapse id="nav-collapse" is-nav>
+            <b-navbar-nav>
+              <b-nav-item href="#">Link</b-nav-item>
+              <b-nav-item href="#" disabled>Disabled</b-nav-item>
+            </b-navbar-nav>
+      
+          </b-collapse>
+        </b-navbar>
+      <b-container>
+        <b-jumbotron header="Test test" lead="I don't use anything for this file Vue.js 2">
+          <p>HTML + Single file component that uses cdn for vue</p>
+        </b-jumbotron>
+
+        <b-form-group description="Type here" label="Enter your name">
+          <b-form-input v-model="name"></b-form-input>
+        </b-form-group>
+
+        <b-alert variant="success" :show="showAlert">Amazing {{ name }}, hope you enjoyed this!</b-alert>
+      </b-container>
+    </div>
+
+    <!-- Start running your app -->
+    <script>
+      window.app = new Vue({
+        el: '#app',
+        data: {
+          name: ''
+        },
+        computed: {
+          showAlert() {
+            return this.name.length > 1 ? true : false
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
