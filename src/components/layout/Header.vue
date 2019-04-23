@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'Header',
-}
+};
 </script>
 
 
@@ -24,4 +24,3 @@ export default {
   width: 50px;
 }
 </style>
-
