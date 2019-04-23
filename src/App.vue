@@ -4,7 +4,7 @@
       <Header />
     </header>
     <main>
-      <MainPage msg="Welcome to Your Vue.js App"/>
+      <MainPage msg="Quotes Roulette"/>
     </main>
     <footer>
       <Footer />

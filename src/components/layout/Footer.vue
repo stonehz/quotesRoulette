@@ -1,5 +1,6 @@
 <template>
   <div>
+    <hr>
     <strong> FOOTER </strong>
   </div>
 </template>

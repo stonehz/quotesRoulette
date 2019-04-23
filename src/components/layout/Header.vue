@@ -1,8 +1,12 @@
 <template>
+  <div>
   <div class="header">
     <img alt="Vue logo" src="../../assets/logo.png">
     <span> Welcome </span>
   </div>
+  <hr>
+  </div>
+ 
 </template>
 
 <script>
